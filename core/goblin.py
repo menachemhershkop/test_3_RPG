@@ -1,5 +1,9 @@
 from core.monster import Monster
 import random
+from fight import pow_damage
+
+from cube.cube import Cube
+
 
 class Goblin(Monster):
     def __init__(self, name):
@@ -14,5 +18,12 @@ class Goblin(Monster):
     #     self.weapons=self.weapons[random.randint(0,2)]
     def speak(self):
         print(self.type,self.name,"מגיע, והוא עצבני!!!!")
-    def attack(self):
-        pass
+    def attack(self, armor, hp):
+        while True:
+            self.speak()
+            cube=Cube().rool(20)+self.speed
+            if cube > armor:
+                damage=(Cube().rool(6)+self.power)*pow_damage(self.weapons)
+                hp-=damage
+            else:
+                break

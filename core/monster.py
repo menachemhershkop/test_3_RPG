@@ -6,6 +6,6 @@ class Monster(Fighters):
         super().__init__(name)
         self.weapons=["סכין","חרב","גרזן"]
     def speak(self):
-       print(123)
+       pass
     def attack(self):
-       print(123)
+       pass
